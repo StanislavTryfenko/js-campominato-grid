@@ -34,7 +34,7 @@ main{
         list-style: none;
         display: flex;
         flex-wrap: wrap;
-        width: 500px;        
+       
         & .box{
             line-height: 50px;
             text-align: center;
