@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    
+}
+
+.blue{
+    background-color: blue;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0 ;
+    & .title{
+        display: flex;
+        gap: 1rem;
+    }
+    & .nav{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-right: 1rem;
+    }
+}
+
+main{
+    background-color: aqua;
+    height: 600px;
+
+    & #grid{
+        margin: auto;
+        padding-top: 2rem;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        width: 500px;        
+        & .box{
+            line-height: 50px;
+            text-align: center;
+            width: 50px;
+            aspect-ratio: 1;
+            border: 1px solid black ;
+            box-sizing: border-box;
+        }
+    }
+}
+
+footer{
+    margin: 1rem 0 ;
+}
