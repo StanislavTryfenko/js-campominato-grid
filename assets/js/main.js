@@ -47,20 +47,44 @@ document.getElementById('play').addEventListener('click', function(){
         li.appendChild(liText);
    
         // Append the "li" node to the list:
-            document.getElementById("grid").appendChild(li);
+        document.getElementById("grid").appendChild(li);
     }
 
     // Take list of box as array
     const boxArray = document.getElementsByClassName('box');
     //console.log(boxArray);
 
+    // Create list of wrong boxes
+    const boxWrong = [];
+    for (let i = 1; i <= 1; i++) {
+        const numberRandom = Math.floor(Math.random() * boxNumb);
+        if (boxWrong.includes(numberRandom)) {
+            i--
+        }else{
+            boxWrong.push(numberRandom);
+        }
+    }
+    console.log(boxWrong);
+    
     // Add event listener for any box with for cycle in array
     for (let i = 0; i < boxArray.length; i++) {
-        const element = boxArray[i];
+        const boxClicked = boxArray[i];
+        
+        boxClicked.addEventListener('click', function(e) {
+            
+            // setting boxes safe or wrong
+            if (boxWrong.includes(i)) {
+                boxClicked.classList.add('wrong_box');   
+            } else{
+                boxClicked.classList.add('safe_box');
+            }
 
-        element.addEventListener('click', function(e) {
-        element.classList.toggle('blue');
-        console.log(element.textContent);
+            // Winning/looses actions
+            if (document.getElementsByClassName('wrong_box').length != 0) {
+                console.log('lose');
+            } else if ((boxNumb - document.getElementsByClassName('safe_box').length)  === boxWrong.length) {
+                console.log('Win');
+            }
         });
-    }   
+    }
 });

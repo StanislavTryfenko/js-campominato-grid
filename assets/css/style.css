@@ -49,3 +49,11 @@ main{
 footer{
     margin: 1rem 0 ;
 }
+
+.safe_box{
+    background-color: palegreen;
+}
+
+.wrong_box{
+    background-color: red;
+}
