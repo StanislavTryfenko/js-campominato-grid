@@ -82,8 +82,10 @@ document.getElementById('play').addEventListener('click', function(){
             // Winning/looses actions
             if (document.getElementsByClassName('wrong_box').length != 0) {
                 console.log('lose');
+                console.log(`your score is: ${document.getElementsByClassName('safe_box').length}`);
             } else if ((boxNumb - document.getElementsByClassName('safe_box').length)  === boxWrong.length) {
                 console.log('Win');
+                console.log(`your score is: ${document.getElementsByClassName('safe_box').length}`);
             }
         });
     }
