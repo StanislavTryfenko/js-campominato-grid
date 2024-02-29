@@ -56,7 +56,7 @@ document.getElementById('play').addEventListener('click', function(){
 
     // Create list of wrong boxes
     const boxWrong = [];
-    for (let i = 1; i <= 1; i++) {
+    for (let i = 1; i <= 16; i++) {
         const numberRandom = Math.floor(Math.random() * boxNumb);
         if (boxWrong.includes(numberRandom)) {
             i--
