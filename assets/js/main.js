@@ -21,10 +21,10 @@ document.getElementById('play').addEventListener('click', function(){
 
     // Create list of wrong boxes
     const boxWrong = [];
-    for (let i = 1; i <= 1; i++) {
+    for (let i = 1; i <= 16; i++) {
         boxWrongCreate(boxWrong, boxNumb, i);
     }
-    console.log(boxWrong); //(UNCOMMENT FOR DEBUGGING)
+    //console.log(boxWrong); (UNCOMMENT FOR DEBUGGING)
     
     // Add event listener for any box with for cycle in array
     for (let i = 0; i < boxArray.length; i++) {
