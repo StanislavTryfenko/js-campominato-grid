@@ -43,7 +43,6 @@ document.getElementById('play').addEventListener('click', function(){
     };
 });
     
-
 // #region FUNCTIONS 
 
     function boxCreate() {
