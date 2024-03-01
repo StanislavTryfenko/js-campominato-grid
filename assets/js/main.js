@@ -21,24 +21,24 @@ document.getElementById('play').addEventListener('click', function(){
 
     // Create list of wrong boxes
     const boxWrong = [];
-    for (let i = 1; i <= 16; i++) {
+    for (let i = 1; i <= 1; i++) {
         boxWrongCreate(boxWrong, boxNumb, i);
     }
-    //console.log(boxWrong); (UNCOMMENT FOR DEBUGGING)
+    console.log(boxWrong); //(UNCOMMENT FOR DEBUGGING)
     
     // Add event listener for any box with for cycle in array
     for (let i = 0; i < boxArray.length; i++) {
         const boxClicked = boxArray[i];
         
         boxClicked.addEventListener('click', function(e) {
-            // check if game is lost
-            if(document.getElementsByClassName('wrong_box').length < 1){
+            // check if game is not lost
+            if((document.getElementsByClassName('wrong_box').length < 1) && (Number(boxNumb) - (boxWrong.length) != (document.getElementsByClassName('safe_box').length))) {
                 // setting boxes safe or wrong
                 boxCheck(boxClicked, boxWrong, i);
 
                 // Winning/looses actions
-                endGame(boxNumb, boxWrong,);
-            };
+                endGame(boxNumb, boxWrong);
+            }
         });
     };
 });
@@ -80,7 +80,7 @@ document.getElementById('play').addEventListener('click', function(){
         }
     }
 
-    function endGame(boxNumb, boxWrong,) {
+    function endGame(boxNumb, boxWrong) {
         //LOSE
         if (document.getElementsByClassName('wrong_box').length != 0) {
             const text = (`YOU LOSE, your score is: ${document.getElementsByClassName('safe_box').length}`);
@@ -91,6 +91,7 @@ document.getElementById('play').addEventListener('click', function(){
             const text = (`YOU WIN, your score is: ${document.getElementsByClassName('safe_box').length}`);
             document.getElementById('result').innerText = (text);
         }
+        
     }
 
 // #endregion 
